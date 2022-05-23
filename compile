@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ext="java"
+src_path="src"
+build_path="out"
+main_app="MainApp"
+
+
+build() {
+  javac --source-path "${src_path}" -d "${build_path}" "${src_path}/${main_app}.${ext}"
+}
+
+build

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+javamon() {
+  nodemon -e java -w src -x './compile && ./start'
+}
+
+javamon
