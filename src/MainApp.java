@@ -1,10 +1,7 @@
-import app.Person;
-import interfaces.IPerson;
+import java.io.IOException;
 
 class MainApp {
-  public static void main(String[] args) {
-    System.out.println("Hello, World!");
-    IPerson p = new Person("cos@email.com");
-    System.out.println(p);
+  public static void main(String[] args) throws IOException {
+    Tools.writeMockData();
   }
 }

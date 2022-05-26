@@ -7,14 +7,7 @@ import interfaces.IPerson;
 public class Person implements IPerson {
   private String _email;
   private String _name = "anonymous";
-  private int _phone = 0;
   private int _bornYear = 0;
-
-  public Person(String email, String name, int phone) {
-    _email = email;
-    _name = name;
-    _phone = phone;
-  }
 
   public Person(String email, String name) {
     _email = email;
@@ -41,20 +34,12 @@ public class Person implements IPerson {
     _email = name;
   }
 
-  public void setPhone(int phone) {
-    _phone = phone;
-  }
-
   public String getEmail() {
     return _email;
   }
 
   public String getName() {
     return _name;
-  }
-
-  public int getPhone() {
-    return _phone;
   }
 
   public int setBornDate(int bornYear) {
@@ -68,7 +53,7 @@ public class Person implements IPerson {
   }
 
   public String toString() {
-    System.out.println("Person:\nemail,name,phone");
-    return String.format("%s,%s,%s", getEmail(), getName(), getPhone());
+    System.out.println("Person:\nemail,name");
+    return String.format("%s,%s,%s", getEmail(), getName());
   }
 }

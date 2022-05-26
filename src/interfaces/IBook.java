@@ -17,12 +17,12 @@ public interface IBook extends ILabel {
 
   public Iterator<IPerson> getReaders();
 
-  // public int addPage(IPage page);
+  public int addPage(IPage page);
 
-  // public IPage deletePage(int pageNo);
+  public IPage deletePage(int pageNo);
 
-  // public int pageCount();
+  public int pageCount();
 
-  // public IPage getAveragePage();
+  public IPage getAveragePage();
 
 }

@@ -1,15 +1,17 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import interfaces.IAuthor;
 import interfaces.IBook;
 import interfaces.IBookAuthor;
+import interfaces.IPage;
 import interfaces.IPerson;
 import constants.Label;
+import constants.PageColor;
 import constants.AuthorTitle;
 
 public class Book implements IBook {
@@ -17,7 +19,7 @@ public class Book implements IBook {
   private String _title;
   private ArrayList<IBookAuthor> _authors = new ArrayList<IBookAuthor>();
   private HashMap<String, IPerson> _readers = new HashMap<>();
-  // private HashMap<Integer, IPage> _pages = new HashMap<>();
+  private HashMap<Integer, IPage> _pages = new HashMap<>();
 
   Book(String title) {
     _title = title;
@@ -40,29 +42,66 @@ public class Book implements IBook {
   public IAuthor[] getAuthors() {
     IAuthor[] authors = new IAuthor[_authors.size()];
     int i = 0;
-    for (IAuthor a : authors) {
+    for (IAuthor a : _authors) {
       authors[++i] = a;
     }
     return authors;
   };
 
   public int addReader(IPerson reader) {
-    _readers.put(reader.getEmail(), reader); 
+    _readers.put(reader.getEmail(), reader);
     return _readers.size();
   };
 
   public Iterator<IPerson> getReaders() {
-   return _readers.values().iterator();
+    return _readers.values().iterator();
   };
 
-  // public int addPage(IPage page);
+  public int addPage(IPage page) {
+    _pages.put(_pages.size(), page);
+    return _pages.size();
+  };
 
-  // public IPage deletePage(int pageNo);
+  public IPage deletePage(int pageNo) {
+    return _pages.remove(pageNo);
+  };
 
-  // public int pageCount();
+  public int pageCount() {
+    return _pages.size();
+  };
 
-  // public IPage getAveragePage();
+  public IPage getAveragePage() throws NoSuchElementException {
+    if (0 == pageCount()) {
+      throw new NoSuchElementException();
+    }
+    int averageWidth = 0;
+    int averageHeight = 0;
+    int colorPageCount = 0;
+    int blackPageCount = 0;
+    int totalPages = pageCount();
+    PageColor averageColor = PageColor.MIXT;
 
+    for (IPage p : _pages.values()) {
+      averageWidth = (averageHeight + p.getWidth()) / totalPages;
+      averageHeight = (averageHeight + p.getHeight()) / totalPages;
+      PageColor currPageColor = p.getColor();
+      if (PageColor.COLOR == currPageColor) {
+        colorPageCount++;
+      }
+      if (PageColor.BLACK == currPageColor) {
+        blackPageCount++;
+      }
+    }
+
+    if (0 == colorPageCount) {
+      averageColor = PageColor.BLACK;
+    }
+    if (0 == blackPageCount) {
+      averageColor = PageColor.COLOR;
+    }
+
+    return new Page(averageWidth, averageHeight, averageColor);
+  };
 
   public Label getLabel() {
     return Book._label;
