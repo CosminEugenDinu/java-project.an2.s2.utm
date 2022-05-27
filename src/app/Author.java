@@ -11,7 +11,7 @@ public abstract class Author implements IAuthor {
   }
 
   public IPerson setPerson(IPerson person) {
-    _person = new Person(person.getEmail(), person.getName(), person.getPhone());
+    _person = new Person(person.getEmail(), person.getName());
     return _person;
   }
 
@@ -22,7 +22,6 @@ public abstract class Author implements IAuthor {
   public IPerson updatePerson(IPerson person) {
     _person.setEmail(person.getEmail());
     _person.setName(person.getName());
-    _person.setPhone(person.getPhone());
     return _person;
   }
 }
