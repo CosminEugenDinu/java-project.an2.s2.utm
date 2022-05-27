@@ -1,9 +1,12 @@
 package app;
 
+import constants.Label;
 import interfaces.IAuthor;
 import interfaces.IPerson;
 
-public abstract class Author implements IAuthor {
+public class Author implements IAuthor {
+  private static final Label _label = Label.AUTHOR;
+
   private IPerson _person;
 
   public Author(IPerson person) {
@@ -23,5 +26,9 @@ public abstract class Author implements IAuthor {
     _person.setEmail(person.getEmail());
     _person.setName(person.getName());
     return _person;
+  }
+
+  public Label getLabel() {
+    return Author._label;
   }
 }

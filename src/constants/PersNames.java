@@ -1,6 +1,6 @@
 package constants;
 
-public class PersonNames {
+public class PersNames {
   public static final String[] header = {
       "id", "email", "name", "year"
   };

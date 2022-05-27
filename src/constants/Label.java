@@ -5,7 +5,8 @@ public enum Label {
   ARTICLE("article"),
   AUTHOR("author"),
   BOOK_AUTHOR("bookAuthor"),
-  READER("reader");
+  READER("reader"),
+  NULL("null");
 
   private String _label;
 

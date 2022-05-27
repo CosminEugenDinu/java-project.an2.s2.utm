@@ -5,9 +5,17 @@ import java.util.Calendar;
 import interfaces.IPerson;
 
 public class Person implements IPerson {
+  private int _id = 0;
   private String _email;
   private String _name = "anonymous";
   private int _bornYear = 0;
+
+  private static String validateEmail(String email) {
+    if (0 == email.length()) {
+      throw new IllegalArgumentException("email cannot be empty");
+    }
+    return email;
+  };
 
   public Person(String email, String name) {
     _email = email;
@@ -18,12 +26,14 @@ public class Person implements IPerson {
     _email = email;
   }
 
-  private static String validateEmail(String email) {
-    if (0 == email.length()) {
-      throw new IllegalArgumentException("email cannot be empty");
-    }
-    return email;
-  };
+  public int setId(int id) {
+    _id = id;
+    return id;
+  }
+
+  public int getId() {
+    return _id;
+  }
 
   public void setEmail(String email) throws IllegalArgumentException {
     Person.validateEmail(email);
@@ -53,7 +63,8 @@ public class Person implements IPerson {
   }
 
   public String toString() {
-    System.out.println("Person:\nemail,name");
-    return String.format("%s,%s,%s", getEmail(), getName());
+    return String.format(
+        "Person: {id: %s, email: %s, name: %s, born: %s}",
+        _id, _email, _name, _bornYear);
   }
 }

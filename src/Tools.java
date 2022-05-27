@@ -13,7 +13,7 @@ import constants.AuthorTitle;
 import constants.BookTitles;
 import constants.Label;
 import constants.PageColor;
-import constants.PersonNames;
+import constants.PersNames;
 import service.Storage;
 
 public class Tools {
@@ -36,10 +36,10 @@ public class Tools {
   }
 
   public static String[] mockPersonsData() {
-    String[] _personsStr = new String[1 + PersonNames.list.length];
-    _personsStr[0] = String.join(separator, PersonNames.header);
+    String[] _personsStr = new String[1 + PersNames.list.length];
+    _personsStr[0] = String.join(separator, PersNames.header);
     int i = 1;
-    for (String name : PersonNames.list) {
+    for (String name : PersNames.list) {
       String id = String.valueOf(i);
       _personsStr[i++] = Tools.nameToPersonStr(id, name);
     }
@@ -87,6 +87,7 @@ public class Tools {
 
   public static String[] mockContributorsData(String[] bookTitles, String[] personNames) {
     int BOOK_MAX_AUTHOR_COUNT = 2;
+    // int BOOK_MAX_READER_COUNT = personNames.length;
     int BOOK_MAX_READER_COUNT = 2;
 
     ArrayList<String> _contribsStr = new ArrayList<String>();
@@ -109,13 +110,13 @@ public class Tools {
         AuthorTitle.POET.toString()
     };
 
-    for (int i = 1; i < bookTitles.length; i++) {
+    for (int i = 1; i <= bookTitles.length; i++) {
       String bookId = String.valueOf(i);
       int authorCount = randInt(1, BOOK_MAX_AUTHOR_COUNT);
       int readerCount = randInt(1, BOOK_MAX_READER_COUNT);
 
-      int[] randAuthorIds = randUniques(0, personNames.length, BOOK_MAX_AUTHOR_COUNT);
-      int[] randReaderIds = randUniques(0, personNames.length, BOOK_MAX_READER_COUNT);
+      int[] randAuthorIds = randUniques(1, personNames.length, BOOK_MAX_AUTHOR_COUNT);
+      int[] randReaderIds = randUniques(1, personNames.length, BOOK_MAX_READER_COUNT);
 
       for (int j = 1; j <= authorCount; j++) {
         String contribIdStr = String.valueOf(contribId++);
@@ -131,7 +132,7 @@ public class Tools {
         String contribIdStr = String.valueOf(contribId++);
         String persId = String.valueOf(randReaderIds[j - 1]);
         String label = Label.READER.toString();
-        String authorTitle = "";
+        String authorTitle = Label.NULL.toString();
         String[] data = { contribIdStr, bookId, persId, label, authorTitle };
         _contribsStr.add(String.join(separator, data));
       }
@@ -176,7 +177,7 @@ public class Tools {
     // readData = Storage.readFile("page.csv");
     // System.out.println(String.join("\n", readData));
 
-    // data = Tools.mockContributorsData(BookTitles.list, PersonNames.list);
+    // data = Tools.mockContributorsData(BookTitles.list, PersNames.list);
     // writtenFile = Storage.writeFile("contrib.csv", data);
     // System.out.println(writtenFile);
     // readData = Storage.readFile("contrib.csv");

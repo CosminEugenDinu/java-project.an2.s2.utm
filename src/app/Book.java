@@ -1,6 +1,7 @@
 package app;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -16,13 +17,23 @@ import constants.AuthorTitle;
 
 public class Book implements IBook {
   private static final Label _label = Label.BOOK;
+  private int _id;
   private String _title;
   private ArrayList<IBookAuthor> _authors = new ArrayList<IBookAuthor>();
   private HashMap<String, IPerson> _readers = new HashMap<>();
   private HashMap<Integer, IPage> _pages = new HashMap<>();
 
-  Book(String title) {
+  public Book(String title) {
     _title = title;
+  }
+
+  public int getId() {
+    return _id;
+  }
+
+  public int setId(int id) {
+    _id = id;
+    return _id;
   }
 
   public void setTitle(String title) {
@@ -36,6 +47,13 @@ public class Book implements IBook {
   public int addAuthor(IAuthor author, AuthorTitle authorTitle) {
     BookAuthor bookAuthor = new BookAuthor(author);
     _authors.add(bookAuthor);
+    return _authors.size();
+  }
+
+  public int addBookAuthors(IBookAuthor[] bookAuthors) {
+    for (IBookAuthor bookAuthor : bookAuthors) {
+      _authors.add(bookAuthor);
+    }
     return _authors.size();
   }
 
@@ -105,5 +123,15 @@ public class Book implements IBook {
 
   public Label getLabel() {
     return Book._label;
+  }
+
+  public String toString() {
+    return String.format(
+        "Book: {id: %s," +
+            "title: %s," +
+            "authors: " + _authors.toString() +
+            "}",
+        _id,
+        _title);
   }
 }

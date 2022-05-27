@@ -1,67 +1,68 @@
 id,book_id,pers_id,label,author_title
-1,1,61,author,doctor
-2,1,36,reader,
-3,1,54,reader,
-4,2,64,author,poet
-5,2,12,author,student
-6,2,58,reader,
-7,3,77,author,doctor
-8,3,60,author,conferențiar universitar
-9,3,49,reader,
-10,3,3,reader,
-11,4,9,author,cercetător
-12,4,54,reader,
-13,4,74,reader,
-14,5,13,author,lector universitar
-15,5,28,author,doctor
-16,5,50,reader,
-17,6,50,author,lector universitar
-18,6,57,reader,
-19,7,52,author,scriitor
-20,7,77,reader,
-21,8,41,author,lector universitar
-22,8,73,reader,
-23,8,10,reader,
-24,9,8,author,asistent universitar
-25,9,12,reader,
-26,10,21,author,profesor universitar
-27,10,45,author,conferențiar universitar
-28,10,61,reader,
-29,11,6,author,scriitor
-30,11,78,reader,
-31,12,14,author,scriitor
-32,12,78,reader,
-33,13,60,author,profesor universitar
-34,13,52,author,conferențiar universitar
-35,13,15,reader,
-36,14,75,author,poet
-37,14,63,reader,
-38,14,69,reader,
-39,15,54,author,student
-40,15,18,reader,
-41,15,73,reader,
-42,16,67,author,lector universitar
-43,16,44,author,conferențiar universitar
-44,16,27,reader,
-45,17,23,author,scriitor
-46,17,32,author,lector universitar
-47,17,27,reader,
-48,18,16,author,asistent universitar
-49,18,46,author,asistent universitar
-50,18,11,reader,
-51,19,77,author,poet
-52,19,7,author,poet
-53,19,71,reader,
-54,19,19,reader,
-55,20,44,author,student
-56,20,73,author,student
-57,20,32,reader,
-58,21,47,author,lector universitar
-59,21,60,author,profesor universitar
-60,21,7,reader,
-61,21,52,reader,
-62,22,18,author,asistent universitar
-63,22,4,reader,
-64,23,59,author,cercetător
-65,23,45,reader,
-66,23,69,reader,
+1,1,32,author,asistent universitar
+2,1,77,reader,null
+3,1,66,reader,null
+4,2,7,author,student
+5,2,32,author,asistent universitar
+6,2,15,reader,null
+7,2,28,reader,null
+8,3,60,author,poet
+9,3,15,author,student
+10,3,55,reader,null
+11,4,33,author,poet
+12,4,9,reader,null
+13,4,78,reader,null
+14,5,21,author,conferențiar universitar
+15,5,67,author,cercetător
+16,5,22,reader,null
+17,6,20,author,conferențiar universitar
+18,6,57,reader,null
+19,7,68,author,cercetător
+20,7,3,reader,null
+21,8,10,author,conferențiar universitar
+22,8,23,reader,null
+23,8,74,reader,null
+24,9,78,author,asistent universitar
+25,9,12,reader,null
+26,9,16,reader,null
+27,10,54,author,asistent universitar
+28,10,35,author,student
+29,10,17,reader,null
+30,11,75,author,lector universitar
+31,11,58,author,poet
+32,11,45,reader,null
+33,12,14,author,doctor
+34,12,36,reader,null
+35,13,60,author,profesor universitar
+36,13,16,reader,null
+37,13,52,reader,null
+38,14,6,author,asistent universitar
+39,14,11,author,scriitor
+40,14,50,reader,null
+41,14,9,reader,null
+42,15,7,author,doctor
+43,15,76,author,doctor
+44,15,12,reader,null
+45,16,9,author,student
+46,16,3,reader,null
+47,17,63,author,doctor
+48,17,79,author,cercetător
+49,17,11,reader,null
+50,18,68,author,doctor
+51,18,5,reader,null
+52,18,30,reader,null
+53,19,21,author,cercetător
+54,19,68,reader,null
+55,20,9,author,student
+56,20,4,reader,null
+57,21,51,author,profesor universitar
+58,21,33,reader,null
+59,22,38,author,conferențiar universitar
+60,22,8,reader,null
+61,22,54,reader,null
+62,23,76,author,doctor
+63,23,41,author,scriitor
+64,23,64,reader,null
+65,23,4,reader,null
+66,24,46,author,asistent universitar
+67,24,47,reader,null

@@ -1,6 +1,10 @@
 package interfaces;
 
 public interface IPerson {
+  public int getId();
+
+  public int setId(int id);
+
   public void setEmail(String email);
 
   public void setName(String name);

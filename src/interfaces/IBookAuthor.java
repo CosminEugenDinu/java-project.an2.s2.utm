@@ -1,9 +1,7 @@
 package interfaces;
 
-import constants.AuthorTitle;
-
 public interface IBookAuthor extends IAuthor {
-  public void setAuthorTitle(AuthorTitle authorTitle);
+  public void setAuthorTitle(String authorTitle);
 
-  public AuthorTitle getAuthorTitle();
+  public String getAuthorTitle();
 }
